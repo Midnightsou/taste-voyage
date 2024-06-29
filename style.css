@@ -226,3 +226,101 @@ button:hover, .filter-btn:hover {
     opacity: 1;
     transform: translateY(0);
 }
+.parallax {
+    background-image: url("C:\Users\mukht\taste voyage\images\Gemini_Generated_Image_thsgk7thsgk7thsg.png");
+    min-height: 400px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero .btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #555;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+#special-offers {
+    background-color: #f8f8f831;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.offer {
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #dddddd00;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.384);
+    max-width: 300px;
+}
+
+.offer img {
+    max-width: 100%;
+    border-radius: 5px;
+}

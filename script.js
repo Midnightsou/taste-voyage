@@ -134,3 +134,78 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    // Existing code...
+
+    // Form validation and submission
+    const contactForm = document.querySelector("#contact form");
+    const newsletterForm = document.querySelector("#newsletter-form");
+
+    contactForm.addEventListener("submit", function(event) {
+        const name = contactForm.querySelector("[name='name']");
+        const email = contactForm.querySelector("[name='email']");
+        const message = contactForm.querySelector("[name='message']");
+        let isValid = true;
+
+        if (name.value.trim() === "") {
+            alert("Name is required!");
+            isValid = false;
+        }
+
+        if (email.value.trim() === "") {
+            alert("Email is required!");
+            isValid = false;
+        } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+            alert("Invalid email format!");
+            isValid = false;
+        }
+
+        if (message.value.trim() === "") {
+            alert("Message is required!");
+            isValid = false;
+        }
+
+        if (!isValid) {
+            event.preventDefault();
+        } else {
+            event.preventDefault();
+            alert("Thank you for your message!");
+            contactForm.reset();
+        }
+    });
+
+    newsletterForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const email = newsletterForm.querySelector("input[type='email']");
+
+        if (email.value.trim() === "") {
+            alert("Email is required!");
+        } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+            alert("Invalid email format!");
+        } else {
+            alert("Thank you for subscribing!");
+            newsletterForm.reset();
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    // Existing code...
+
+    // Back to top button
+    const backToTopButton = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    backToTopButton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});

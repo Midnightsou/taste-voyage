@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>menu - taste voyage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+      src="C:\Users\mukht\Downloads\Gemini_Generated_Image_hnxk7ghnxk7ghnxk (1).jpeg" alt="taste voyage logo"
+      class="logo">
+      <h1>Taste voyage</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="menu.html">menu</a></li>
+          <li><a href="contact.html">contact</a></li>
+          <li><a href="reviews.html">reviews</a></li>
+          <li><a href="order.html">order</a></li>
+          <li><a href="offers.html">offers</a></li>
+        </ul>
+        <section id="order">
+            <h2>Order Online</h2>
+            <form id="order-form">
+                <label for="order-name">Name:</label>
+                <input type="text" id="order-name" name="name" required>
+                
+                <label for="order-email">Email:</label>
+                <input type="email" id="order-email" name="email" required>
+                
+                <label for="order-item">Order Item:</label>
+                <input type="text" id="order-item" name="item" required>
+                
+                <label for="order-quantity">Quantity:</label>
+                <input type="number" id="order-quantity" name="quantity" min="1" required>
+                
+                <label for="order-address">Delivery Address:</label>
+                <textarea id="order-address" name="address" required></textarea>
+                
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+        
