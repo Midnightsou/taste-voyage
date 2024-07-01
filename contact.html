@@ -1,92 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale1.0">
-<title>contact TASTE VOYAGE</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale1.0" />
+    <title>contact TASTE VOYAGE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <img 
-        src="C:\Users\mukht\Downloads\Gemini_Generated_Image_hnxk7ghnxk7ghnxk (1).jpeg" 
-        alt="taste voyage logo" class="logo"
-        >
-        <h1>TASTE VOYAGE</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="menu.html">menu</a></li>
-                <li><a href="contact.html">contact</a></li>
-                <li><a href="reviews.html">reviews</a></li>
-                <li><a href="order.html">order</a></li>
-                <li><a href="offers.html">offers</a></li>
-            </ul>
-        </nav>
+      <img src="images/logo.png" alt="taste voyage logo" class="logo py-3" />
+      <h1>TASTE VOYAGE</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li>
+            <a href="contact.html" class="text-primary text-underline"
+              ><u>Contact</u></a
+            >
+          </li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section>
-            <h2>Connect With Us</h2>
-            <p>Are you intrested in collaborating with a renowned chef based in nigeria?<br>share your details,and we
-                will reach out to you promptly</br>.We are excited to engage with you </p>
-            <form>
-                <label for="name">NAME</label>
-                <input type="text" id="name" name="name" required>
-                <label for="name">FIRST NAME</label>
-                <input type="text" id="FIRST NAME" name="name" required>
-                <br><label for="email">EMAIL</label>
-                <input type="email" id="email" email="email" required></br>
-                <label for="message">MESSAGE</label><textarea id="message" name="message" required></textarea>
-                <br><button type="submit">SEND</button></br>
-            </form>
-        </section>
+      <section class="container py-5">
+        <h2>Connect With Us</h2>
+        <p>
+          Are you intrested in collaborating with a renowned chef based in
+          nigeria?<br />share your details,and we will reach out to you
+          promptly.<br />We are excited to engage with you
+        </p>
+        <form>
+          <label for="name">NAME</label>
+          <input type="text" id="name" name="name" required />
+          <label for="name">FIRST NAME</label>
+          <input type="text" id="FIRST NAME" name="name" required />
+          <br /><label for="email">EMAIL</label>
+          <input type="email" id="email" email="email" required /><br />
+          <label for="message">MESSAGE</label
+          ><textarea id="message" name="message" required></textarea>
+          <br /><button type="submit">SEND</button><br />
+        </form>
+      </section>
+      <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form>
+          <!-- existing form elements -->
+        </form>
+        <div id="map" style="width: 100%; height: 450px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31653.042588039803!2d3.8805073743164096!3d7.395253999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039929722137233%3A0x1628959bc9c01378!2sAgodi%20Gate%20Bus%20Stop!5e0!3m2!1sen!2sru!4v1719684999861!5m2!1sen!2sru"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map location"
+          ></iframe>
+        </div>
+      </section>
+      <section id="newsletter" class="container py-5">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
     </main>
+
     <footer>
-        <p>&copy;2024 TASTE VOYAGE</p>
-    </footer>
-    <footer>
-        <div class="social-media">
-          <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-          <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
-          <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+      <p>&copy; 2024 Restaurant Name</p>
+      <div class="social-media">
+        <a href="#"
+          ><img src="images\Downpic.cc-2408118443.jpg" alt="Facebook" class=""
+        /></a>
+        <a href="#" class="mx-3"
+          ><img src="images\Downpic.cc-1779908711.jpg" alt="Instagram"
+        /></a>
+        <a href="#"
+          ><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter"
+        /></a>
       </div>
     </footer>
     <script src="path/to/lightbox.js"></script>
     <script src="scripts/scripts.js"></script>
-        <script src="scripts/scripts.js"></script>
-</body>
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/YOUR_PROPERTY_ID/default";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+  </body>
 </html>
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-        <!-- existing form elements -->
-    </form>
-    <div id="map" style="width:100%;height:400px;">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5151515161286!2d-122.41941548468136!3d37.77492977975857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064f29f20db%3A0x4d75e9b2e5b8cb5b!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1544568289038"
-            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-</section>
-<section id="newsletter">
-    <h2>Subscribe to Our Newsletter</h2>
-    <form id="newsletter-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-    </form>
-</section>
-<body>
-    <!-- Add this inside the <body> tag at the bottom -->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>    
-</body>
-

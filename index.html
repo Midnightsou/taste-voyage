@@ -1,114 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1 .0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1 .0" />
     <title>taste voyage</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <button id="back-to-top" title="Back to top">&#8679;</button>
     <header>
-        <img src="C:\Users\mukht\Downloads\Gemini_Generated_Image_hnxk7ghnxk7ghnxk (1).jpeg" alt="taste voyage logo"
-            class="logo">
-        <h1>TASTE VOYAGE</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="menu.html">menu</a>
-                <li>
-                </li><a href="contact.html">contact</a></li>
-                <li><a href="reviews.html">reviews</a></li>
-                <li><a href="order.html">order</a></li>
-                <li><a href="offers.html">offers</a></li>
-                <li><a href="gallery.html">gallery</a></li>
-            </ul>
-        </nav>
+      <img src="images/logo.png" alt="taste voyage logo" class="logo py-3" />
+      <h1>TASTE VOYAGE</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html" class="text-primary text-underline"
+              ><u>Home</u></a
+            >
+          </li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="offers.html">Offers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Some detailed information about the dish.</p>
-            </div>
+      <section class="hero container">
+        <video autoplay muted loop id="bg-video">
+          <source src="images\667fba76e384729c251730c0.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-content">
+          <a href="menu.html" class="btn bg-primary btn-lg">Explore Menu</a>
         </div>
-        <section class="hero">
-            <video autoplay muted loop id="bg-video">
-                <source src="images\667fba76e384729c251730c0.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <a href="#menu" class="btn">Explore Menu</a>
-            </div>
-        </section>
-        
-        <section>
-            <h2>welcome to the exquiste journey of Taste Voyage</h2>
-            <img src="images\Gemini_Generated_Image_hnxk7jhnxk7jhnxk.png" alt="taste voyage image"
-                class="mainimage img-fluid">
-            <p>Experience the finest dining with a variety of dishes to choose from.
-                welcome to a world where flavours unite in harmony.
-                Experience the journey of savouring each dishes,carefully crafted by a seasoned chef based in nigeria.
+      </section>
+
+      <section class="my-5 py-5 container">
+        <div class="row g-5">
+          <div class="col-12 col-md-6 banner-welcome mb">
+            <h2>
+              Welcome to the exquiste journey <br class="d-none d-md-block" />
+              of Taste Voyage
+            </h2>
+            <p>
+              Experience the finest dining with a variety of dishes to choose
+              from.<br class="d-none d-md-block" />
+              Welcome to a world where flavours unite in harmony.<br
+                class="d-none d-md-block"
+              />
+              Experience the journey of savouring each dishes,
+              <br class="d-none d-md-block" />carefully crafted by a seasoned
+              chef based in nigeria.
             </p>
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <h3>welcome to our culinary journeys</h3>
-                        <p>indulge in our exquiste dishes</p>
-                        <img src="images\[Downloader.la]-667208168e62b.png" alt="taste voyage image"
-                            class="menuimage">
-                    </div>
-                    <div class="carousel-item">
-                        <p>Discover the flavours of Nigeria</p>
-                        <img src="images\[Downloader.la]-667206d7d258e.png" alt="taste voyage image"
-                            class="menuimage">
-
-                    </div>
-                    <div class="carousel-item">
-                        <p>Experience true culinary mastery</p>
-                        <img src="images\[Downloader.la]-6672046b7ddd1 (1).png" alt="taste voyage image"
-                            class=" menuimage">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <a href="menu.html" class="btn bg-primary btn-lg text-white"
+              >Visit our menu now</a
+            >
+          </div>
+          <div class="col-12 col-md-6">
+            <img
+              src="images\Gemini_Generated_Image_hnxk7jhnxk7jhnxk.png"
+              alt="taste voyage image"
+              class="mainimage img-fluid"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img
+                src="images\[Downloader.la]-667208168e62b.png"
+                alt="taste voyage image"
+                class="menuimage"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="card-title">Welcome to our culinary journeys</h5>
+                <p class="card-text">Indulge in our exquiste dishes</p>
+                <a href="menu.html" class="btn btn-primary">Visit our menu</a>
+              </div>
             </div>
-
-        </section>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img
+                src="images\[Downloader.la]-667206d7d258e.png"
+                alt="taste voyage image"
+                class="menuimage"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="card-title">Discover the flavours of Nigeria</h5>
+                <p class="card-text">Indulge in our exquiste dishes</p>
+                <a href="menu.html" class="btn btn-primary">Visit our menu</a>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img
+                src="images\[Downloader.la]-6672046b7ddd1 (1).png"
+                alt="taste voyage image"
+                class="menuimage"
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="card-title">Experience true culinary mastery</h5>
+                <p class="card-text">Indulge in our exquiste dishes</p>
+                <a href="menu.html" class="btn btn-primary">Visit our menu</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 taste voyage</p>
+      <p>&copy; 2024 TASTE VOYAGE</p>
+      <div class="social-media">
+        <a href="#"
+          ><img src="images\Downpic.cc-2408118443.jpg" alt="Facebook" class=""
+        /></a>
+        <a href="#" class="mx-3"
+          ><img src="images\Downpic.cc-1779908711.jpg" alt="Instagram"
+        /></a>
+        <a href="#"><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter" /></a>
+      </div>
     </footer>
-    <footer>
-        <p>&copy; 2024 Restaurant Name</p>
-        <div class="social-media">
-            <a href="#"><img src="C:\Users\mukht\Downloads\Downpic.cc-2408118443.jpg" alt="Facebook"></a>
-            <a href="#"><img src="C:\Users\mukht\Downloads\Downpic.cc-1779908711.jpg" alt="Instagram"></a>
-            <a href="#"><img src="images\Downpic.cc-2340282587.jpg"alt="Twitter"></a>
-        </div>
-    </footer>    
     <script src="scripts/scripts.js"></script>
-</body>
-
+  </body>
 </html>
-
