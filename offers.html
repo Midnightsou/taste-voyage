@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" initial-scale="1 .0" />
-    <title>taste voyage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taste Voyage | Offers</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -12,14 +12,33 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      /* Modern card hover effect for offers */
+      .card {
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(184, 92, 56, 0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(184, 92, 56, 0.12);
+      }
+      .card img {
+        height: 180px;
+        object-fit: cover;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+      }
+      #special-offers h2 {
+        color: #b85c38;
+        font-weight: 700;
+        margin-bottom: 32px;
+        letter-spacing: 1px;
+      }
+    </style>
   </head>
 
   <body>
@@ -30,15 +49,9 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-          <li>
-            <a href="reviews.html">Reviews</a>
-          </li>
-          <li>
-            <a href="order.html">Order</a>
-          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="order.html">Order</a></li>
           <li>
             <a href="offers.html" class="text-primary text-underline"
               ><u>Offers</u></a
@@ -49,28 +62,40 @@
       </nav>
     </header>
     <main>
-      <section id="special-offers" class="container">
+      <section id="special-offers" class="container py-5">
         <h2>Special Offers and Promotions</h2>
-        <div class="row pt-5 g-3">
-          <div class="col-12 col-md-3 d-flex justify-content-center">
-            <div class="card" style="width: 18rem">
+        <div class="row pt-4 g-4">
+          <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
               <img src="images/pygyh.jpg" alt="Offer 1" />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title mt-auto">
                   Buy One Get One Free on Desserts
                 </h5>
                 <p class="card-text">Valid until June 30, 2024</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Claim Offer</a>
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-3 d-flex justify-content-center">
-            <div class="card" style="width: 18rem">
+          <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
               <img src="images/promo.jpg" alt="Offer 2" />
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title mt-auto">20% Off on All Appetizers</h5>
                 <p class="card-text">Valid until July 15, 2024</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Claim Offer</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="card" style="width: 20rem;">
+              <img src="images/steptodown.com964360.jpg" alt="Offer 3" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title mt-auto">
+                  Free Drink with Every Main Course
+                </h5>
+                <p class="card-text">Valid until August 31, 2024</p>
+                <a href="#" class="btn btn-primary">Claim Offer</a>
               </div>
             </div>
           </div>
@@ -81,15 +106,27 @@
       <p>&copy; 2024 TASTE VOYAGE</p>
       <div class="social-media">
         <a href="#"
-          ><img src="images\Downpic.cc-2408118443.jpg" alt="Facebook" class=""
-        /></a>
+          ><img src="images/Downpic.cc-2408118443.jpg" alt="Facebook" /></a
+        >
         <a href="#" class="mx-3"
-          ><img src="images\Downpic.cc-1779908711.jpg" alt="Instagram"
-        /></a>
+          ><img src="images/Downpic.cc-1779908711.jpg" alt="Instagram" /></a
+        >
         <a href="#"
-          ><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter"
-        /></a>
+          ><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter" /></a
+        >
       </div>
     </footer>
+    <script>
+      // Fade-in effect for offer cards
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.card').forEach(function(card, i) {
+          card.style.opacity = 0;
+          setTimeout(() => {
+            card.style.transition = "opacity 1s";
+            card.style.opacity = 1;
+          }, 200 + i * 200);
+        });
+      });
+    </script>
   </body>
 </html>

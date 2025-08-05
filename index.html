@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" initial-scale="1 .0" />
-    <title>taste voyage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taste Voyage</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -12,20 +12,14 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
     <button id="back-to-top" title="Back to top">&#8679;</button>
     <header>
-      <img src="images/logo.png" alt="taste voyage logo" class="logo py-3" />
+      <img src="images/logo.png" alt="Taste Voyage logo" class="logo py-3" />
       <h1>TASTE VOYAGE</h1>
       <nav>
         <ul>
@@ -34,7 +28,29 @@
               ><u>Home</u></a
             >
           </li>
-          <li><a href="menu.html">Menu</a></li>
+          <li>
+            <a
+              href="menu.html"
+              class="nav-link d-flex align-items-center gap-2 fw-semibold"
+              aria-label="View our menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+                style="vertical-align: middle"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z"
+                />
+              </svg>
+              Menu
+            </a>
+          </li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="order.html">Order</a></li>
@@ -46,43 +62,65 @@
     <main>
       <section class="hero container">
         <video autoplay muted loop id="bg-video">
-          <source src="images\667ff55b87b5989955071115.mp4"type="video/mp4" />
+          <source src="images/667ff55b87b5989955071115.mp4" type="video/mp4" />
         </video>
         <div class="hero-content">
-          <a href="menu.html" class="btn bg-primary btn-lg">Explore Menu</a>
+          <h2
+            style="
+              font-size: 2.5rem;
+              font-weight: 700;
+              letter-spacing: 1px;
+              margin-bottom: 18px;
+            "
+          >
+            Welcome to Taste Voyage
+          </h2>
+          <p
+            style="
+              font-size: 1.2rem;
+              max-width: 600px;
+              margin: auto;
+            "
+          >
+            Experience the finest Nigerian cuisine, crafted with passion and
+            tradition.<br />
+            Enjoy a culinary journey where every dish tells a story.
+          </p>
+          <a
+            href="order.html"
+            class="btn bg-primary btn-lg text-white mt-4"
+            >Order Now</a
+          >
         </div>
       </section>
 
       <section class="my-5 py-5 container">
-        <div class="row g-5">
+        <div class="row g-5 align-items-center">
           <div class="col-12 col-md-6 banner-welcome mb">
             <h2>
-              Welcome to the exquiste journey <br class="d-none d-md-block" />
-              of Taste Voyage
+              Discover Exquisite Flavours <br class="d-none d-md-block" />
             </h2>
             <p>
-              Experience the finest dining with a variety of dishes to choose
-              from.<br class="d-none d-md-block" />
-              Welcome to a world where flavours unite in harmony.<br
-                class="d-none d-md-block"
-              />
-              Experience the journey of savouring each dishes,
-              <br class="d-none d-md-block" />carefully crafted by a seasoned
-              chef based in nigeria.
+              From classic Jollof Rice to chef's specials, Taste Voyage brings you
+              the best of Nigerian and African cuisine.<br />
+              Dine in, take out, or order online for a memorable food experience.
             </p>
-            <a href="menu.html" class="btn bg-primary btn-lg text-white"
-              >Visit our menu now</a
+            <a
+              href="menu.html"
+              class="btn btn-primary btn-lg mt-2"
+              >See Our Menu</a
             >
           </div>
           <div class="col-12 col-md-6">
             <img
-              src="images\Gemini_Generated_Image_hnxk7jhnxk7jhnxk.png"
-              alt="taste voyage image"
+              src="images/Gemini_Generated_Image_hnxk7jhnxk7jhnxk.png"
+              alt="Taste Voyage dish"
               class="mainimage img-fluid"
             />
           </div>
         </div>
       </section>
+
       <section class="container">
         <div
           id="carouselExampleIndicators"
@@ -92,37 +130,37 @@
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="2000">
               <img
-                src="images\[Downloader.la]-667208168e62b.png"
-                alt="taste voyage image"
+                src="images/[Downloader.la]-667208168e62b.png"
+                alt="Taste Voyage dish 1"
                 class="menuimage"
               />
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="card-title">Welcome to our culinary journeys</h5>
-                <p class="card-text">Indulge in our exquiste dishes</p>
+                <p class="card-text">Indulge in our exquisite dishes</p>
                 <a href="menu.html" class="btn btn-primary">Visit our menu</a>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img
-                src="images\[Downloader.la]-667206d7d258e.png"
-                alt="taste voyage image"
+                src="images/[Downloader.la]-667206d7d258e.png"
+                alt="Taste Voyage dish 2"
                 class="menuimage"
               />
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="card-title">Discover the flavours of Nigeria</h5>
-                <p class="card-text">Indulge in our exquiste dishes</p>
+                <p class="card-text">Indulge in our exquisite dishes</p>
                 <a href="menu.html" class="btn btn-primary">Visit our menu</a>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img
-                src="images\[Downloader.la]-6672046b7ddd1 (1).png"
-                alt="taste voyage image"
+                src="images/[Downloader.la]-6672046b7ddd1 (1).png"
+                alt="Taste Voyage dish 3"
                 class="menuimage"
               />
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="card-title">Experience true culinary mastery</h5>
-                <p class="card-text">Indulge in our exquiste dishes</p>
+                <p class="card-text">Indulge in our exquisite dishes</p>
                 <a href="menu.html" class="btn btn-primary">Visit our menu</a>
               </div>
             </div>
@@ -155,15 +193,36 @@
     <footer>
       <p>&copy; 2024 TASTE VOYAGE</p>
       <div class="social-media">
-        <a href="#"
-          ><img src="images\Downpic.cc-2408118443.jpg" alt="Facebook" class=""
-        /></a>
-        <a href="#" class="mx-3"
-          ><img src="images\Downpic.cc-1779908711.jpg" alt="Instagram"
-        /></a>
+        <a href="#"><img src="images/Downpic.cc-2408118443.jpg" alt="Facebook" /></a>
+        <a href="#" class="mx-3"><img src="images/Downpic.cc-1779908711.jpg" alt="Instagram" /></a>
         <a href="#"><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter" /></a>
       </div>
     </footer>
-    <script src="scripts/scripts.js"></script>
+    <script>
+      // Fade-in effect for hero and welcome section
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.hero, .banner-welcome').forEach(function(el, i) {
+          el.style.opacity = 0;
+          setTimeout(() => {
+            el.style.transition = "opacity 1s";
+            el.style.opacity = 1;
+          }, 200 + i * 200);
+        });
+      });
+      // Back to top button logic
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.getElementById("back-to-top");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTopButton.style.display = "block";
+          } else {
+            backToTopButton.style.display = "none";
+          }
+        });
+        backToTopButton.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
   </body>
 </html>

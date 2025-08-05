@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>menu - taste voyage</title>
+    <title>Order - Taste Voyage</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -12,14 +12,70 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      #order {
+        max-width: 520px;
+        margin: 48px auto 0 auto;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(184, 92, 56, 0.08);
+        padding: 32px 24px;
+      }
+      #order h2 {
+        color: #b85c38;
+        font-weight: 700;
+        margin-bottom: 28px;
+        text-align: center;
+      }
+      #order-form label {
+        font-weight: 600;
+        margin-top: 12px;
+        margin-bottom: 4px;
+        color: #b85c38;
+      }
+      #order-form input,
+      #order-form textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        margin-bottom: 12px;
+        font-size: 1rem;
+        background: #faf7f2;
+        transition: border 0.2s;
+      }
+      #order-form input:focus,
+      #order-form textarea:focus {
+        border: 1.5px solid #b85c38;
+        outline: none;
+        background: #fff;
+      }
+      #order-form button {
+        background: #b85c38;
+        color: #fff;
+        padding: 12px 0;
+        border: none;
+        border-radius: 24px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        width: 100%;
+        margin-top: 8px;
+        transition: background 0.2s;
+      }
+      #order-form button:hover {
+        background: #f8d49d;
+        color: #b85c38;
+      }
+      #order-success {
+        display: none;
+        color: #28a745;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 16px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -29,12 +85,8 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li>
-          <li>
-            <a href="reviews.html">Reviews</a>
-          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
           <li>
             <a href="order.html" class="text-primary text-underline"
               ><u>Order</u></a
@@ -48,7 +100,7 @@
     <main>
       <section id="order" class="container">
         <h2>Order Online</h2>
-        <form id="order-form">
+        <form id="order-form" autocomplete="off">
           <label for="order-name">Name:</label>
           <input type="text" id="order-name" name="name" required />
 
@@ -68,9 +120,12 @@
           />
 
           <label for="order-address">Delivery Address:</label>
-          <textarea id="order-address" name="address" required></textarea>
+          <textarea id="order-address" name="address" rows="3" required></textarea>
 
           <button type="submit">Place Order</button>
+          <span id="order-success"
+            >Thank you! Your order has been received.</span
+          >
         </form>
       </section>
     </main>
@@ -78,16 +133,48 @@
       <p>&copy; 2024 TASTE VOYAGE</p>
       <div class="social-media">
         <a href="#"
-          ><img src="images\Downpic.cc-2408118443.jpg" alt="Facebook" class=""
+          ><img src="images/Downpic.cc-2408118443.jpg" alt="Facebook" class=""
         /></a>
         <a href="#" class="mx-3"
-          ><img src="images\Downpic.cc-1779908711.jpg" alt="Instagram"
+          ><img src="images/Downpic.cc-1779908711.jpg" alt="Instagram"
         /></a>
         <a href="#"
           ><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter"
         /></a>
       </div>
     </footer>
+    <script>
+      // Save order to localStorage and show a success message
+      document
+        .getElementById("order-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("order-name").value.trim();
+          const email = document.getElementById("order-email").value.trim();
+          const item = document.getElementById("order-item").value.trim();
+          const quantity = document.getElementById("order-quantity").value.trim();
+          const address = document.getElementById("order-address").value.trim();
+          if (name && email && item && quantity && address) {
+            const orderData = {
+              name,
+              email,
+              item,
+              quantity,
+              address,
+              date: new Date().toISOString(),
+            };
+            let orders = JSON.parse(
+              localStorage.getItem("tastevoyage_orders") || "[]"
+            );
+            orders.push(orderData);
+            localStorage.setItem("tastevoyage_orders", JSON.stringify(orders));
+            document.getElementById("order-success").style.display = "block";
+            this.reset();
+            setTimeout(() => {
+              document.getElementById("order-success").style.display = "none";
+            }, 4000);
+          }
+        });
+    </script>
   </body>
-  <script src="scripts/scripts.js"></script>
 </html>
