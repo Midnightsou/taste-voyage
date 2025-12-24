@@ -1,132 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taste Voyage | Offers</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-      /* Modern card hover effect for offers */
-      .card {
-        border-radius: 18px;
-        box-shadow: 0 2px 12px rgba(184, 92, 56, 0.08);
-        transition: transform 0.2s, box-shadow 0.2s;
-        overflow: hidden;
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offers - Taste Voyage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #b85c38;
+      --primary-dark: #964a2c;
+      --primary-light: #d47656;
+      --accent: #f4a261;
+      --dark: #1a1a1a;
+      --light: #f8f9fa;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: linear-gradient(135deg, #faf8f6 0%, #fff 100%);
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(184, 92, 56, 0.1);
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo:hover {
+      transform: scale(1.1);
+    }
+    
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover, nav a.active {
+      color: var(--primary);
+    }
+    
+    nav a:hover::after, nav a.active::after {
+      width: 100%;
+    }
+    
+    /* Main Content */
+    main {
+      margin-top: 100px;
+      padding: 3rem 2rem 5rem;
+    }
+    
+    .offers-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .offers-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    
+    .offers-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Offers Container */
+    .offers-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Offer Card */
+    .offer-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(184, 92, 56, 0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(184, 92, 56, 0.1);
+      position: relative;
+    }
+    
+    .offer-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(184, 92, 56, 0.2);
+    }
+    
+    .offer-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(184, 92, 56, 0.4);
+    }
+    
+    .offer-image-wrapper {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .offer-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .offer-card:hover .offer-image {
+      transform: scale(1.1);
+    }
+    
+    .offer-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+    }
+    
+    .offer-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .offer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+    
+    .offer-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    
+    .offer-validity {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .btn-claim {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .btn-claim:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(184, 92, 56, 0.3);
+      color: white;
+    }
+    
+    /* Featured Offer */
+    .featured-offer {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 25px;
+      padding: 3rem;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      box-shadow: 0 10px 40px rgba(184, 92, 56, 0.3);
+    }
+    
+    .featured-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .featured-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    .featured-code {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.5rem;
+      border-radius: 15px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      border: 2px dashed rgba(255, 255, 255, 0.5);
+      display: inline-block;
+    }
+    
+    .btn-featured {
+      background: white;
+      color: var(--primary);
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-featured:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      color: var(--primary);
+    }
+    
+    .featured-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .featured-image img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .social-media {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    
+    .social-link {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .mobile-menu-btn {
+        display: block;
       }
-      .card:hover {
-        transform: translateY(-4px) scale(1.03);
-        box-shadow: 0 8px 32px rgba(184, 92, 56, 0.12);
+      
+      nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        transition: left 0.3s ease;
+        padding: 2rem;
       }
-      .card img {
-        height: 180px;
-        object-fit: cover;
-        border-top-left-radius: 18px;
-        border-top-right-radius: 18px;
+      
+      nav.active {
+        left: 0;
       }
-      #special-offers h2 {
-        color: #b85c38;
-        font-weight: 700;
-        margin-bottom: 32px;
-        letter-spacing: 1px;
+      
+      nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
       }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <img src="images/logo.png" alt="taste voyage logo" class="logo py-3" />
-      <h1>TASTE VOYAGE</h1>
-      <nav>
+      
+      .offers-header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .featured-offer {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+      }
+      
+      .featured-content h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .offers-header h1 {
+        font-size: 2rem;
+      }
+      
+      .offer-image-wrapper {
+        height: 200px;
+      }
+      
+      .featured-offer {
+        padding: 1.5rem;
+      }
+      
+      .featured-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="header-container">
+      <div class="logo-section">
+        <img src="images/logo.png" alt="Taste Voyage" class="logo" />
+        <div class="brand-name">TASTE VOYAGE</div>
+      </div>
+      <button class="mobile-menu-btn" id="menuBtn">☰</button>
+      <nav id="nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="order.html">Order</a></li>
-          <li>
-            <a href="offers.html" class="text-primary text-underline"
-              ><u>Offers</u></a
-            >
-          </li>
+          <li><a href="offers.html" class="active">Offers</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="order.html" style="color: var(--primary); font-weight: 600;">Order Now</a></li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <section id="special-offers" class="container py-5">
-        <h2>Special Offers and Promotions</h2>
-        <div class="row pt-4 g-4">
-          <div class="col-12 col-md-4 d-flex justify-content-center">
-            <div class="card" style="width: 20rem;">
-              <img src="images/pygyh.jpg" alt="Offer 1" />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title mt-auto">
-                  Buy One Get One Free on Desserts
-                </h5>
-                <p class="card-text">Valid until June 30, 2024</p>
-                <a href="#" class="btn btn-primary">Claim Offer</a>
-              </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Offers Header -->
+    <div class="offers-header fade-in">
+      <h1>Special Offers & Promotions</h1>
+      <p>Don't miss out on our exclusive deals and limited-time promotions</p>
+    </div>
+
+    <!-- Featured Offer -->
+    <div class="featured-offer fade-in">
+      <div class="featured-content">
+        <h2>🎉 Weekend Special!</h2>
+        <p>Get 25% off on all orders this weekend. Use the code below at checkout.</p>
+        <div class="featured-code">WEEKEND25</div>
+        <a href="order.html" class="btn-featured">Order Now</a>
+      </div>
+      <div class="featured-image">
+        <img src="images/pygyh.jpg" alt="Weekend Special" />
+      </div>
+    </div>
+
+    <!-- Offers Container -->
+    <div class="offers-container">
+      <div class="row g-4">
+        <!-- Offer 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="offer-card fade-in">
+            <div class="offer-badge">HOT DEAL</div>
+            <div class="offer-image-wrapper">
+              <img src="images/pygyh.jpg" alt="Desserts Offer" class="offer-image" />
+              <div class="offer-image-overlay"></div>
             </div>
-          </div>
-          <div class="col-12 col-md-4 d-flex justify-content-center">
-            <div class="card" style="width: 20rem;">
-              <img src="images/promo.jpg" alt="Offer 2" />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title mt-auto">20% Off on All Appetizers</h5>
-                <p class="card-text">Valid until July 15, 2024</p>
-                <a href="#" class="btn btn-primary">Claim Offer</a>
+            <div class="offer-body">
+              <h3 class="offer-title">Buy One Get One Free</h3>
+              <p class="offer-description">
+                Indulge in our delicious desserts! Buy any dessert and get another one absolutely free. Perfect for sharing or treating yourself.
+              </p>
+              <div class="offer-validity">
+                <span>📅</span>
+                <span>Valid until June 30, 2024</span>
               </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 d-flex justify-content-center">
-            <div class="card" style="width: 20rem;">
-              <img src="images/steptodown.com964360.jpg" alt="Offer 3" />
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title mt-auto">
-                  Free Drink with Every Main Course
-                </h5>
-                <p class="card-text">Valid until August 31, 2024</p>
-                <a href="#" class="btn btn-primary">Claim Offer</a>
-              </div>
+              <a href="order.html" class="btn-claim">Claim Offer</a>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 TASTE VOYAGE</p>
-      <div class="social-media">
-        <a href="#"
-          ><img src="images/Downpic.cc-2408118443.jpg" alt="Facebook" /></a
-        >
-        <a href="#" class="mx-3"
-          ><img src="images/Downpic.cc-1779908711.jpg" alt="Instagram" /></a
-        >
-        <a href="#"
-          ><img src="images/Downpic.cc-2340282587.jpg" alt="Twitter" /></a
-        >
+
+        <!-- Offer 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="offer-card fade-in">
+            <div class="offer-badge">20% OFF</div>
+            <div class="offer-image-wrapper">
+              <img src="images/promo.jpg" alt="Appetizers Offer" class="offer-image" />
+              <div class="offer-image-overlay"></div>
+            </div>
+            <div class="offer-body">
+              <h3 class="offer-title">All Appetizers Discount</h3>
+              <p class="offer-description">
+                Start your meal right! Enjoy 20% off on all appetizers. From spring rolls to samosas, we've got you covered.
+              </p>
+              <div class="offer-validity">
+                <span>📅</span>
+                <span>Valid until July 15, 2024</span>
+              </div>
+              <a href="order.html" class="btn-claim">Claim Offer</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="offer-card fade-in">
+            <div class="offer-badge">FREE DRINK</div>
+            <div class="offer-image-wrapper">
+              <img src="images/steptodown.com964360.jpg" alt="Main Course Offer" class="offer-image" />
+              <div class="offer-image-overlay"></div>
+            </div>
+            <div class="offer-body">
+              <h3 class="offer-title">Complimentary Beverage</h3>
+              <p class="offer-description">
+                Order any main course and receive a refreshing drink on the house. Choose from our selection of soft drinks and juices.
+              </p>
+              <div class="offer-validity">
+                <span>📅</span>
+                <span>Valid until August 31, 2024</span>
+              </div>
+              <a href="order.html" class="btn-claim">Claim Offer</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-    <script>
-      // Fade-in effect for offer cards
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('.card').forEach(function(card, i) {
-          card.style.opacity = 0;
-          setTimeout(() => {
-            card.style.transition = "opacity 1s";
-            card.style.opacity = 1;
-          }, 200 + i * 200);
-        });
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: var(--primary-light);">TASTE VOYAGE</h3>
+      <p style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.8;">Experience authentic Nigerian cuisine crafted with passion and tradition</p>
+      <div class="social-media">
+        <a href="#" class="social-link" aria-label="Facebook">f</a>
+        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+      </div>
+      <p style="margin-top: 2rem; opacity: 0.6;">&copy; 2024 Taste Voyage. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuBtn.textContent = nav.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    </script>
-  </body>
+    }, {
+      threshold: 0.1
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    // Initial load animation
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelector('.offers-header').classList.add('visible');
+      }, 100);
+
+      setTimeout(() => {
+        document.querySelector('.featured-offer').classList.add('visible');
+      }, 300);
+
+      document.querySelectorAll('.offer-card').forEach((card, i) => {
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, 500 + (i * 200));
+      });
+    });
+  </script>
+</body>
 </html>
